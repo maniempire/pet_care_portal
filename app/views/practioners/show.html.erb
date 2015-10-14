@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @practioner.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @practioner.address %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @practioner.state %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @practioner.city %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @practioner.zip %>
+</p>
+
+<p>
+  <strong>School degree received from:</strong>
+  <%= @practioner.school_degree_received_from %>
+</p>
+
+<p>
+  <strong>Years in practice:</strong>
+  <%= @practioner.years_in_practice %>
+</p>
+
+<%= link_to 'Edit', edit_practioner_path(@practioner) %> |
+<%= link_to 'Back', practioners_path %>

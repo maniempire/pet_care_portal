@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Practioners</h1>
+
+          <div class="table-responsive">
+            <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+	  <th>State</th>
+      <th>Zip</th>
+      <th>School degree received from</th>
+      <th>Years in practice</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @practioners.each do |practioner| %>
+      <tr>
+        <td><%= practioner.name %></td>
+        <td><%= practioner.address %></td>
+        <td><%= practioner.city %></td>
+		 <td><%= practioner.state %></td>
+        <td><%= practioner.zip %></td>
+        <td><%= practioner.school_degree_received_from %></td>
+        <td><%= practioner.years_in_practice %></td>
+        <td><%= link_to 'Show', practioner %></td>
+        <td><%= link_to 'Edit', edit_practioner_path(practioner) %></td>
+        <td><%= link_to 'Destroy', practioner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'New Practioner', new_practioner_path %>

@@ -1,0 +1,45 @@
+<%= form_for(@practioner) do |f| %>
+  <% if @practioner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@practioner.errors.count, "error") %> prohibited this practioner from being saved:</h2>
+
+      <ul>
+      <% @practioner.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :zip %><br>
+    <%= f.number_field :zip %>
+  </div>
+  <div class="field">
+    <%= f.label :school_degree_received_from %><br>
+    <%= f.text_field :school_degree_received_from %>
+  </div>
+  <div class="field">
+    <%= f.label :years_in_practice %><br>
+	<%= f.select(:years_in_practice, (1..100), :prompt => 'Select') %>
+  </div>
+  <div class="actions"><br>
+    <%= f.submit %>
+  </div>
+<% end %>

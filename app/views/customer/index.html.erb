@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>My Pet Appointments</h1>
+
+          <div class="table-responsive">
+            <table class="table table-striped">
+  <thead>
+    <tr>
+	  <th>Pet Name</th>
+      <th>Date of Next Appointment</th>
+	  <th>Doctor Name</th>
+      <th>Reason for visit</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customer_pet_appointments.each do |appointment| %>
+	<% if appointment.date_of_visit >= Date.current %>
+      <tr>
+		<td><%= appointment.pet.name %></td>
+        <td><%= appointment.date_of_visit %></td>
+		 <td><%= appointment.practioner.name  %></td>
+        <td><%= appointment.reason_for_visit %></td>
+      </tr>
+	  <% end %>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br/>
+<%= link_to 'My Pets', customer_pets_path %>
